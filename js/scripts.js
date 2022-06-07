@@ -37,8 +37,8 @@ for (var i = 0; i < 12; i++) {
 function draw() {
  // Make sure the mouse position is set everytime
    // draw() is called.
- var x = mouse.x-6,
-     y = mouse.y-6;
+ var x = mouse.x,
+     y = mouse.y;
  
  // This loop is where all the 90s magic happens
  dots.forEach(function(dot, index, dots) {
