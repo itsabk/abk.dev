@@ -204,3 +204,48 @@ $(".slider").each(function () {
 
   advance();
 });
+
+// --------------------------------------------------
+//  Greeting animation
+// --------------------------------------------------
+var greetings = [
+  "Hi!",
+  "مرحباً!",
+  "¡Hola!",
+  "Привет!",
+  "你好!",
+  "Hey!",
+  "Bonjour!",
+  "Hello!",
+  "Ciao!",
+  "こんにちは!",
+  "안녕하세요!",
+];
+var introHeading = document.querySelector(".intro-heading");
+var currentIndex = 0;
+var currentGreeting = "";
+
+function type() {
+  if (currentIndex < currentGreeting.length) {
+    introHeading.textContent += currentGreeting.charAt(currentIndex);
+    currentIndex++;
+    setTimeout(type, 100);
+  } else {
+    setTimeout(erase, 1500);
+  }
+}
+
+function erase() {
+  if (currentIndex > 0) {
+    introHeading.textContent = currentGreeting.substring(0, currentIndex - 1);
+    currentIndex--;
+    setTimeout(erase, 50);
+  } else {
+    currentGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+    setTimeout(type, 500);
+  }
+}
+
+setTimeout(type, 500);
+
+// --------------------------------------------------

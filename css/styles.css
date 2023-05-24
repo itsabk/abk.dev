@@ -57,7 +57,6 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-
 nav,
 section {
   display: block;
@@ -68,7 +67,7 @@ body {
   font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -92,14 +91,13 @@ h3 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  color: #000000;
 }
-
 
 ul {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
 
 ul ul {
   margin-bottom: 0;
@@ -109,7 +107,6 @@ b,
 strong {
   font-weight: bolder;
 }
-
 
 sup {
   position: relative;
@@ -141,7 +138,6 @@ a:not([href]):not([class]):hover {
   text-decoration: none;
 }
 
-
 code {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
@@ -166,7 +162,6 @@ button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
-
 
 button {
   margin: 0;
@@ -275,7 +270,6 @@ code {
 a > code {
   color: inherit;
 }
-
 
 .container-fluid {
   width: 100%;
@@ -410,7 +404,6 @@ a > code {
   background-size: 100% 100%;
 }
 @media (max-width: 991.98px) {
-  
   .navbar-expand-lg > .container-fluid {
     padding-right: 0;
     padding-left: 0;
@@ -428,7 +421,7 @@ a > code {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  
+
   .navbar-expand-lg > .container-fluid {
     flex-wrap: nowrap;
   }
@@ -688,11 +681,9 @@ button.bg-primary:focus {
   padding: 0 !important;
 }
 
-
 .mx-auto {
   margin-right: auto !important;
 }
-
 
 .mx-auto {
   margin-left: auto !important;
@@ -728,7 +719,6 @@ a.text-warning:focus {
     text-decoration: underline;
   }
 
-  
   img {
     page-break-inside: avoid;
   }
@@ -898,4 +888,31 @@ section.resume-section .resume-section-content {
   border-radius: 3px;
   background: #343a40;
   pointer-events: none;
+}
+
+.intro-heading {
+  overflow: hidden;
+  white-space: nowrap;
+  height: 1.2em;
+  animation: typingAnimation 5s steps(40, end) infinite,
+    cursorAnimation 0.5s infinite;
+}
+
+@keyframes typingAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes cursorAnimation {
+  from,
+  to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: black;
+  }
 }
